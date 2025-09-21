@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cireng_Lovers</title>
   <meta name="description" content="Profil produk, keunggulan, harga, testimoni, dan cara pemesanan." />
-  <!-- ============ Gaya (CSS) ============ -->
   <style>
     :root{
       --brand:#2b8a3e;
@@ -226,39 +225,33 @@
             <input required name="nama" placeholder="Nama kamu" style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb">
           </label>
           <br><br>
-
-          <label>Alamat<br>
-            <textarea required name="alamat" placeholder="Tulis alamat lengkap kamu" style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb"></textarea>
-          </label>
-          <br><br>
-
           <label>Pilih Paket<br>
-            <select name="paket" id="paketSelect" required style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb" onchange="toggleCustomPaket(this)">
+            <select name="paket" id="paketSelect" required onchange="toggleCustomInput(this)" style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb">
               <option value="Paket Hemat">Paket Hemat</option>
               <option value="Paket Favorit">Paket Favorit</option>
               <option value="Paket Acara">Paket Acara</option>
-              <option value="Custom">Lainnya / Custom</option>
+              <option value="Lainnya">Lainnya / Custom</option>
             </select>
           </label>
           <br><br>
-
           <div id="customPaketField" style="display:none">
-            <label>Tulis Nama Paket<br>
-              <input name="paketCustom" placeholder="Contoh: Beli 7 pcs" style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb">
+            <label>Paket Custom<br>
+              <input name="customPaket" placeholder="Tulis paket custom kamu" style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb">
             </label>
             <br><br>
           </div>
-
           <label>Varian<br>
-            <input name="varian" placeholder="Contoh: Original Pedas" style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb">
+            <input name="varian" placeholder="Contoh: Abon Pedas/manis" style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb">
           </label>
           <br><br>
-
           <label>Jumlah<br>
             <input type="number" min="1" value="1" name="qty" style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb">
           </label>
           <br><br>
-
+          <label>Alamat<br>
+            <textarea required name="alamat" placeholder="Tulis alamat lengkap untuk pengiriman" style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb"></textarea>
+          </label>
+          <br><br>
           <button class="btn btn-primary" type="submit">Kirim ke WhatsApp</button>
           <a class="btn btn-ghost" href="https://wa.me/6289691419493" target="_blank" rel="noopener">Chat Langsung</a>
         </form>
@@ -269,36 +262,5 @@
 
 <footer>
   <div class="container foot">
-    <div>© <span id="year"></span> CIRBON</div>
-    <div style="display:flex;gap:10px">
-      <a href="#galeri">Galeri</a>
-      <a href="#harga">Harga</a>
-      <a href="#pesan">Pesan</a>
-    </div>
-  </div>
-</footer>
-
-<!-- ============ Script ============ -->
-<script>
-function toggleMenu(){
-  document.getElementById('navLinks').classList.toggle('open');
-}
-function toggleCustomPaket(sel){
-  document.getElementById('customPaketField').style.display = sel.value === 'Custom' ? 'block':'none';
-}
-function order(e){
-  e.preventDefault();
-  const f = e.target;
-  const nama   = f.nama.value;
-  const alamat = f.alamat.value;
-  const paket  = f.paket.value === 'Custom' ? f.paketCustom.value : f.paket.value;
-  const varian = f.varian.value;
-  const qty    = f.qty.value;
-  const msg = `Halo kak, saya mau pesan CIRBON:%0A- Nama: ${nama}%0A- Alamat: ${alamat}%0A- Paket: ${paket}%0A- Varian: ${varian}%0A- Jumlah: ${qty}`;
-  window.open(`https://wa.me/6289691419493?text=${msg}`,'_blank');
-  return false;
-}
-document.getElementById('year').textContent = new Date().getFullYear();
-</script>
-</body>
-</html>
+    <small>© <span id="year"></span> Cireng_Lovers • UMKM/Team Stiper</small>
+    <

@@ -1,159 +1,206 @@
-<!DOCTYPE html><html lang="id">
+<!DOCTYPE html>
+<html lang="id">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Cireng_Lovers – Profil & Pemesanan</title>
-  <meta name="description" content="Profil produk, keunggulan, harga, testimoni, dan cara pemesanan." />
+  <meta name="description" content="Profil produk, keunggulan, harga, testimoni, dan cara pemesanan.">
+
   <style>
-    /* …(CSS sama persis seperti tadi)… */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #fdfdfd;
+      color: #333;
+    }
+    header {
+      background: #f7b733;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1rem;
+    }
+
+    /* Hero / info produk */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      text-align: center;
+      background-color: #fff6e5;
+    }
+    .hero img {
+      max-width: 400px;
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+    .hero h2 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 1rem;
+      max-width: 600px;
+    }
+
+    /* Bagian produk */
+    .produk {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px 20px;
+    }
+    .produk-card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      overflow: hidden;
+      text-align: center;
+      padding: 15px;
+    }
+    .produk-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    .produk-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+    }
+    .produk-card p {
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+    }
+
+    /* Form pemesanan */
+    .form-section {
+      padding: 40px 20px;
+      background: #fff6e5;
+    }
+    .form-section h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+    }
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    form label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    form input, form select, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+    form button {
+      display: block;
+      width: 100%;
+      background: #f7b733;
+      color: #fff;
+      border: none;
+      padding: 12px;
+      font-size: 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    form button:hover {
+      background: #e09e2c;
+    }
+
+    /* Responsif */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+      .hero h2 {
+        font-size: 1.3rem;
+      }
+    }
   </style>
 </head>
 <body>
-  <!-- ============ Header/Nav ============ -->
+
   <header>
-    <div class="container nav">
-      <div class="brand"><span class="dot"></span> <span>NAMA PRODUK</span></div>
-      <button class="menu-btn" aria-label="Menu" onclick="toggleMenu()">☰</button>
-      <nav class="nav-links" id="navLinks">
-        <a href="#tentang">Tentang</a>
-        <a href="#galeri">Galeri</a>
-        <a href="#harga">Harga</a>
-        <a href="#testimoni">Testimoni</a>
-        <a href="#pesan">Pesan</a>
-      </nav>
-    </div>
+    <h1>Cireng_Lovers</h1>
+    <p>Camilan khas mahasiswa/i – gurih, nikmat, dan terjangkau</p>
   </header>
 
-  <!-- ============ Hero ============ -->
   <section class="hero">
-    <div class="container hero-inner">
-      <div>
-        <span class="badge">Produk Lokal • Kualitas Juara</span>
-        <h1>Solusi <span style="color:var(--brand)">Sehari-hari</span> yang Enak, Sehat, & Terjangkau</h1>
-        <p class="lead">Deskripsikan produk utama kamu di sini: apa itu, untuk siapa, dan kenapa harus beli sekarang. Singkat, padat, mengena.</p>
-        <div class="cta">
-          <!-- tombol WhatsApp dihapus -->
-          <a class="btn btn-ghost" href="#tentang">Lihat Detail Produk</a>
-        </div>
-        <div style="display:flex;gap:16px;margin-top:16px;color:var(--muted);align-items:center">
-          <div style="display:flex;gap:6px;align-items:center"><span style="width:10px;height:10px;background:var(--accent);border-radius:50%"></span><small>COD/Meet up tersedia</small></div>
-          <div style="display:flex;gap:6px;align-items:center"><span style="width:10px;height:10px;background:#60a5fa;border-radius:50%"></span><small>Pengiriman cepat</small></div>
-        </div>
-      </div>
-      <div class="card" style="padding:14px">
-        <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?q=80&w=1200&auto=format&fit=crop" alt="Foto produk" />
-      </div>
+    <img src="gambar-produk-utama.jpg" alt="Cireng Lovers">
+    <h2>Cireng Nikmat dan Gurih</h2>
+    <p>
+      Cireng kami dibuat dari bahan pilihan dan diolah secara higienis. Cocok untuk camilan di berbagai suasana.
+    </p>
+    <!-- Tombol WhatsApp dihapus sesuai permintaan -->
+  </section>
+
+  <section class="produk">
+    <div class="produk-card">
+      <img src="cireng-original.jpg" alt="Cireng Original">
+      <h3>Cireng Original</h3>
+      <p>Rasa gurih asli tanpa campuran.</p>
+    </div>
+    <div class="produk-card">
+      <img src="cireng-pedas.jpg" alt="Cireng Pedas">
+      <h3>Cireng Pedas</h3>
+      <p>Rasa pedas nikmat bikin nagih.</p>
+    </div>
+    <div class="produk-card">
+      <img src="cireng-keju.jpg" alt="Cireng Keju">
+      <h3>Cireng Keju</h3>
+      <p>Taburan keju lumer di setiap gigitan.</p>
     </div>
   </section>
 
-  <!-- ============ Highlights ============ -->
-  …(bagian Highlights & Tentang sama)…
+  <section class="form-section">
+    <h2>Pemesanan Cireng</h2>
+    <form action="https://api.whatsapp.com/send" method="get" target="_blank">
+      <label for="nama">Nama</label>
+      <input type="text" id="nama" name="nama" placeholder="Nama Anda" required>
 
-  <!-- ============ Harga ============ -->
-  <section id="harga">
-    <div class="container">
-      <div class="section-head">
-        <h2 class="section-title">Harga & Paket</h2>
-        <small style="color:var(--muted)">Transparan & jelas</small>
-      </div>
-      <div class="pricing-grid">
-        <div class="card price-card">
-          <div class="high-title">Paket Hemat</div>
-          <div><span class="price">Rp25.000</span> <span class="unit">/ pcs</span></div>
-          <ul class="ul">
-            <li>Isi fitur 1</li>
-            <li>Isi fitur 2</li>
-            <li>Gratis stiker</li>
-          </ul>
-          <!-- tombol pilih paket dihapus -->
-        </div>
-        <div class="card price-card" style="border:2px solid var(--brand)">
-          <div class="high-title">Paket Favorit</div>
-          <div><span class="price">Rp45.000</span> <span class="unit">/ 2 pcs</span></div>
-          <ul class="ul">
-            <li>Varian bebas pilih</li>
-            <li>Hemat ongkir</li>
-            <li>Garansi puas</li>
-          </ul>
-        </div>
-        <div class="card price-card">
-          <div class="high-title">Paket Acara</div>
-          <div><span class="price">Rp200.000</span> <span class="unit">/ 10 pcs</span></div>
-          <ul class="ul">
-            <li>Cocok untuk arisan</li>
-            <li>Custom label</li>
-            <li>Diskon khusus</li>
-          </ul>
-        </div>
-      </div>
-    </div>
+      <label for="alamat">Alamat</label>
+      <textarea id="alamat" name="alamat" placeholder="Alamat lengkap" rows="3" required></textarea>
+
+      <label for="varian">Pilih Varian</label>
+      <select id="varian" name="varian" required>
+        <option value="">-- Pilih Varian --</option>
+        <option value="Original">Cireng Original</option>
+        <option value="Pedas">Cireng Pedas</option>
+        <option value="Keju">Cireng Keju</option>
+      </select>
+
+      <label for="jumlah">Jumlah Pesanan</label>
+      <input type="number" id="jumlah" name="jumlah" placeholder="Jumlah" min="1" required>
+
+      <button type="submit">Pesan Sekarang via WhatsApp</button>
+    </form>
   </section>
 
-  <!-- ============ Testimoni ============ -->
-  …(bagian testimoni sama)…
-
-  <!-- ============ FAQ + Kontak/Pesan ============ -->
-  <section id="pesan">
-    <div class="container">
-      <div class="faq">
-        <div>
-          …(pertanyaan umum sama)…
-        </div>
-        <div class="card" style="padding:18px">
-          <h3 style="margin-top:0">Pesan Sekarang</h3>
-          <p style="color:var(--muted);margin-top:6px">Hubungi kami via WhatsApp atau isi form singkat ini.</p>
-          <form onsubmit="return order(event)">
-            <label>Nama<br>
-              <input required name="nama" placeholder="Nama kamu" style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb">
-            </label>
-            <br><br>
-            <!-- tambahan Nama Paket -->
-            <label>Nama Paket<br>
-              <input required name="paket" placeholder="Misal: Paket Hemat" style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb">
-            </label>
-            <br><br>
-            <label>Varian<br>
-              <select name="varian" style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb">
-                <option>Original</option>
-                <option>Pedas</option>
-                <option>Keju</option>
-              </select>
-            </label>
-            <br><br>
-            <label>Jumlah<br>
-              <input type="number" min="1" value="1" name="qty" style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb">
-            </label>
-            <br><br>
-            <button class="btn btn-primary" type="submit">Kirim ke WhatsApp</button>
-            <a class="btn btn-ghost" href="https://wa.me/6289691419493" target="_blank" rel="noopener">Chat Langsung</a>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ Footer ============ -->
-  …(footer sama)…
-
-  <script>
-    function toggleMenu(){
-      document.getElementById('navLinks').classList.toggle('open');
-    }
-
-    function order(e){
-      e.preventDefault();
-      const f=e.target;
-      const nama=encodeURIComponent(f.nama.value.trim());
-      const paket=encodeURIComponent(f.paket.value.trim());
-      const varian=encodeURIComponent(f.varian.value);
-      const qty=encodeURIComponent(f.qty.value);
-      const produk=encodeURIComponent('Cireng_Lovers');
-      const msg=`Halo, saya ${nama} mau pesan ${produk}%0A- Paket: ${paket}%0A- Varian: ${varian}%0A- Jumlah: ${qty}`;
-      const wa=`https://wa.me/6289691419493?text=${msg}`;
-      window.open(wa,'_blank');
-      return false;
-    }
-    document.getElementById('year').textContent=new Date().getFullYear();
-  </script>
 </body>
 </html>

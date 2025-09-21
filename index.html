@@ -299,15 +299,15 @@
                     ✏️ Detail Pesanan Custom
                   </span>
                 </label>
-                <textarea name="customDetail" placeholder="Contoh: 5 pcs rasa pedas + 3 pcs original, kemasan khusus ulang tahun..."
+                <textarea name="customDetail" placeholder="Contoh: 5 pcs rasa pedas + 3 pcs original..."
                           style="width:100%;padding:12px 14px;border-radius:8px;border:1px solid #bbf7d0;font-family:inherit;font-size:14px;min-height:80px;resize:vertical;background:#ffffff"></textarea>
               </div>
             </div>
 
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px" id="varianJumlahFields">
               <div class="form-group">
                 <label style="display:block;font-weight:600;margin-bottom:8px;color:var(--ink)">
-                  <span style="display:flex;align-items:center;gap:6px">🌶️ Varian Rasa</span>
+                  <span style="display:flex;align-items:center;gap:6px">Varian Rasa</span>
                 </label>
                 <input name="varian" placeholder="Original, Pedas, Mix" 
                        style="width:100%;padding:14px 16px;border-radius:12px;border:2px solid #e5e7eb;font-family:inherit;font-size:14px;transition:all 0.3s;background:#ffffff"
@@ -326,11 +326,23 @@
               </div>
             </div>
 
+            <div style="display:none" id="jumlahOnlyField">
+              <div class="form-group">
+                <label style="display:block;font-weight:600;margin-bottom:8px;color:var(--ink)">
+                  <span style="display:flex;align-items:center;gap:6px">🔢 Jumlah</span>
+                </label>
+                <input type="number" min="1" value="1" name="qtyCustom"
+                       style="width:100%;padding:14px 16px;border-radius:12px;border:2px solid #e5e7eb;font-family:inherit;font-size:14px;transition:all 0.3s;background:#ffffff"
+                       onfocus="this.style.borderColor='var(--brand)';this.style.boxShadow='0 0 0 3px rgba(43,138,62,0.1)'"
+                       onblur="this.style.borderColor='#e5e7eb';this.style.boxShadow='none'">
+              </div>
+            </div>
+
           </div>
           
           <div style="margin-top:32px;display:flex;justify-content:center">
             <button class="btn btn-primary" type="submit" style="background:linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);border:none;box-shadow:0 4px 14px rgba(43,138,62,0.3);font-size:15px;padding:16px 24px">
-              🚀 Kirim ke WhatsApp
+               Kirim Pesanan
             </button>
           </div>
           
@@ -356,31 +368,31 @@
       <div class="team-member">
         <div class="team-avatar">MH</div>
         <div class="team-name">Muhammad Haikal S</div>
-        <div class="team-role">Project Manager</div>
+        <div class="team-role">Pemilik</div>
       </div>
       
       <div class="team-member">
         <div class="team-avatar">SH</div>
         <div class="team-name">Shielvia</div>
-        <div class="team-role">Marketing Specialist</div>
+        <div class="team-role">Pemilik</div>
       </div>
       
       <div class="team-member">
         <div class="team-avatar">RA</div>
         <div class="team-name">Rahmatullah</div>
-        <div class="team-role">Production Head</div>
+        <div class="team-role">Pemilik</div>
       </div>
       
       <div class="team-member">
         <div class="team-avatar">MA</div>
         <div class="team-name">Muhammad As'ad</div>
-        <div class="team-role">Quality Control</div>
+        <div class="team-role">Pemilik</div>
       </div>
       
       <div class="team-member">
         <div class="team-avatar">CN</div>
         <div class="team-name">Cindy Norkharidah</div>
-        <div class="team-role">Operations Manager</div>
+        <div class="team-role">Pemilik</div>
       </div>
     </div>
   </div>
@@ -405,10 +417,17 @@ function toggleMenu(){
 
 function toggleCustomFields(value) {
   const customFields = document.getElementById('customFields');
+  const varianJumlahFields = document.getElementById('varianJumlahFields');
+  const jumlahOnlyField = document.getElementById('jumlahOnlyField');
+  
   if (value === 'Lainnya') {
     customFields.style.display = 'block';
+    varianJumlahFields.style.display = 'none';
+    jumlahOnlyField.style.display = 'block';
   } else {
     customFields.style.display = 'none';
+    varianJumlahFields.style.display = 'grid';
+    jumlahOnlyField.style.display = 'none';
   }
 }
 
@@ -418,22 +437,29 @@ function order(e){
   const nama   = f.nama.value.trim();
   const alamat = f.alamat.value.trim();
   const paket  = f.paket.value;
-  const varian = f.varian.value.trim() || '–';
-  const qty    = f.qty.value;
   const produk = 'Cireng_Lovers';
   
+  let varian = '';
+  let qty = '';
   let customDetail = '';
+  
   if (paket === 'Lainnya') {
     customDetail = f.customDetail.value.trim();
+    qty = f.qtyCustom.value;
+  } else {
+    varian = f.varian.value.trim() || '–';
+    qty = f.qty.value;
   }
 
   let msg = `Halo, saya ${nama} mau pesan ${produk}\n- Paket: ${paket}`;
   
   if (customDetail) {
     msg += `\n- Detail Custom: ${customDetail}`;
+  } else {
+    msg += `\n- Varian: ${varian}`;
   }
   
-  msg += `\n- Varian: ${varian}\n- Jumlah: ${qty}\n- Alamat: ${alamat}`;
+  msg += `\n- Jumlah: ${qty}\n- Alamat: ${alamat}`;
   
   const wa  = `https://wa.me/6289691419493?text=${encodeURIComponent(msg)}`;
 

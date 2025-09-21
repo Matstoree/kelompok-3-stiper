@@ -3,15 +3,17 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cireng_Lovers – Profil & Pemesanan</title>
-  <meta name="description" content="Profil produk, keunggulan, harga, testimoni, dan cara pemesanan." />  <!-- ============ Gaya (CSS) ============ -->  <style>
+  <meta name="description" content="Profil produk, keunggulan, harga, testimoni, dan cara pemesanan." />
+  <!-- ============ Gaya (CSS) ============ -->
+  <style>
     :root{
-      --brand:#2b8a3e;         /* Ubah warna utama di sini */
-      --brand-dark:#236f34;    /* Versi lebih gelap */
-      --accent:#ffcc00;        /* Aksen */
-      --ink:#111827;           /* Teks utama */
-      --muted:#6b7280;         /* Teks sekunder */
-      --surface:#ffffff;       /* Latar kartu */
-      --bg:#f8fafc;            /* Latar halaman */
+      --brand:#2b8a3e;
+      --brand-dark:#236f34;
+      --accent:#ffcc00;
+      --ink:#111827;
+      --muted:#6b7280;
+      --surface:#ffffff;
+      --bg:#f8fafc;
       --radius:16px;
       --shadow:0 10px 25px rgba(0,0,0,.08);
     }
@@ -19,8 +21,6 @@
     html,body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;color:var(--ink);background:var(--bg)}
     a{color:var(--brand);text-decoration:none}
     img{max-width:100%;height:auto;display:block}
-
-    /* Layout */
     .container{max-width:1150px;margin:auto;padding:0 20px}
     header{position:sticky;top:0;background:#fff;border-bottom:1px solid #e5e7eb;z-index:40}
     .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
@@ -29,8 +29,6 @@
     .nav a{font-weight:600;margin-left:18px;color:#111827}
     .nav a:hover{color:var(--brand)}
     .menu-btn{display:none;background:transparent;border:0;font-size:28px}
-
-    /* Hero */
     .hero{padding:56px 0 24px}
     .hero-inner{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
     .badge{display:inline-flex;gap:8px;align-items:center;background:#ecfdf5;color:#065f46;border:1px solid #a7f3d0;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
@@ -42,49 +40,32 @@
     .btn-primary{background:var(--brand);color:#fff}
     .btn-primary:hover{background:var(--brand-dark)}
     .btn-ghost{background:#fff;border-color:#e5e7eb;color:#111827}
-
     .card{background:var(--surface);border:1px solid #e5e7eb;border-radius:var(--radius);box-shadow:var(--shadow)}
-
-    /* Highlights */
     .highlights{padding:30px 0}
     .high-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .high-item{padding:18px}
     .high-title{font-weight:800;margin:8px 0}
     .high-desc{color:var(--muted)}
-
-    /* Section */
     section{padding:36px 0}
     .section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
     .section-title{font-size:28px;margin:0}
-
-    /* Gallery */
     .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
     .gallery-grid img{border-radius:12px;border:1px solid #e5e7eb}
-
-    /* Pricing */
     .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
     .price-card{padding:20px}
     .price{font-size:36px;font-weight:900}
     .unit{color:var(--muted);font-size:14px}
     .ul{margin:12px 0 0;padding-left:18px;color:var(--muted)}
-
-    /* Testimonial */
     .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
     .testi{padding:18px}
     .testi p{color:#374151}
     .testi .who{font-weight:800;margin-top:10px}
-
-    /* FAQ */
     .faq{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
     details{border:1px solid #e5e7eb;border-radius:12px;padding:14px 16px;background:#fff}
     summary{font-weight:800;cursor:pointer}
     details p{color:var(--muted)}
-
-    /* Footer */
     footer{padding:28px 0 48px;color:var(--muted)}
     .foot{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
-
-    /* Mobile */
     @media (max-width: 900px){
       .hero-inner{grid-template-columns:1fr}
       .high-grid{grid-template-columns:1fr}
@@ -97,205 +78,201 @@
       .nav-links.open{display:flex;flex-direction:column;gap:8px;position:absolute;top:64px;left:0;right:0;background:#fff;border-bottom:1px solid #e5e7eb;padding:12px 20px}
       .nav-links a{margin:0;padding:8px 0}
     }
-  </style></head>
+  </style>
+</head>
 <body>
-  <!-- ============ Header/Nav ============ -->
-  <header>
-    <div class="container nav">
-      <div class="brand"><span class="dot"></span> <span>Cireng_Lovers</span></div>
-      <button class="menu-btn" aria-label="Menu" onclick="toggleMenu()">☰</button>
-      <nav class="nav-links" id="navLinks">
-        <a href="#tentang">Tentang</a>
-        <a href="#galeri">Galeri</a>
-        <a href="#harga">Harga</a>
-        <a href="#testimoni">Testimoni</a>
-        <a href="#pesan">Pesan</a>
-      </nav>
+<header>
+  <div class="container nav">
+    <div class="brand"><span class="dot"></span> <span>Cireng_Lovers</span></div>
+    <button class="menu-btn" aria-label="Menu" onclick="toggleMenu()">☰</button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#tentang">Tentang</a>
+      <a href="#galeri">Galeri</a>
+      <a href="#harga">Harga</a>
+      <a href="#testimoni">Testimoni</a>
+      <a href="#pesan">Pesan</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-inner">
+    <div>
+      <span class="badge">Produk Lokal • Kualitas Juara</span>
+      <h1>Solusi <span style="color:var(--brand)">Sehari-hari</span> yang Enak, Sehat, & Terjangkau</h1>
+      <p class="lead">Deskripsikan produk utama kamu di sini: apa itu, untuk siapa, dan kenapa harus beli sekarang.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="https://wa.me/6289691419493?text=Halo%20saya%20mau%20pesan%20NAMA%20PRODUK" target="_blank" rel="noopener">💬 Pesan via WhatsApp</a>
+        <a class="btn btn-ghost" href="#tentang">Lihat Detail Produk</a>
+      </div>
+      <div style="display:flex;gap:16px;margin-top:16px;color:var(--muted);align-items:center">
+        <div style="display:flex;gap:6px;align-items:center"><span style="width:10px;height:10px;background:var(--accent);border-radius:50%"></span><small>COD/Meet up tersedia</small></div>
+        <div style="display:flex;gap:6px;align-items:center"><span style="width:10px;height:10px;background:#60a5fa;border-radius:50%"></span><small>Pengiriman cepat</small></div>
+      </div>
     </div>
-  </header>  <!-- ============ Hero ============ -->  <section class="hero">
-    <div class="container hero-inner">
+    <div class="card" style="padding:14px">
+      <img src="https://a.top4top.io/p_3551ar18q1.jpg" alt="Foto produk" />
+    </div>
+  </div>
+</section>
+
+<section class="highlights container">
+  <div class="high-grid">
+    <div class="card high-item">
+      <div class="high-title">Bahan Berkualitas</div>
+      <div class="high-desc">Gunakan poin-poin keunggulan: bahan premium, tanpa pengawet, lokal, dll.</div>
+    </div>
+    <div class="card high-item">
+      <div class="high-title">Harga Bersahabat</div>
+      <div class="high-desc">Tawarkan value for money dengan paket hemat/ecer.</div>
+    </div>
+    <div class="card high-item">
+      <div class="high-title">Rasa Disukai Banyak Orang</div>
+      <div class="high-desc">Sisipkan klaim sosial: “disukai 98% tester”, atau testimoni singkat.</div>
+    </div>
+  </div>
+</section>
+
+<section id="tentang">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="section-title">Tentang Produk</h2>
+      <a href="#pesan">Pesan Sekarang →</a>
+    </div>
+    <div class="card" style="padding:18px">
+      <p style="color:var(--muted);max-width:80ch">Ceritakan cerita produk… USP dsb.</p>
+    </div>
+  </div>
+</section>
+
+<section id="galeri">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="section-title">Galeri</h2>
+      <small style="color:var(--muted)">Taruh 4–8 foto terbaik</small>
+    </div>
+    <div class="gallery-grid">
+      <img src="https://a.top4top.io/p_3551ar18q1.jpg" alt="Galeri 1">
+      <img src="https://a.top4top.io/p_3551ar18q1.jpg" alt="Galeri 2">
+      <img src="https://a.top4top.io/p_3551ar18q1.jpg" alt="Galeri 3">
+      <img src="https://a.top4top.io/p_3551ar18q1.jpg" alt="Galeri 4">
+    </div>
+  </div>
+</section>
+
+<section id="harga">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="section-title">Harga & Paket</h2>
+      <small style="color:var(--muted)">Transparan & jelas</small>
+    </div>
+    <div class="pricing-grid">
+      <div class="card price-card">
+        <div class="high-title">Paket Hemat</div>
+        <div><span class="price">Rp25.000</span> <span class="unit">/ pcs</span></div>
+        <ul class="ul"><li>Isi fitur 1</li><li>Isi fitur 2</li><li>Gratis stiker</li></ul>
+        <div class="cta" style="margin-top:14px"><a class="btn btn-primary" href="#pesan">Pilih Paket</a></div>
+      </div>
+      <div class="card price-card" style="border:2px solid var(--brand)">
+        <div class="high-title">Paket Favorit</div>
+        <div><span class="price">Rp45.000</span> <span class="unit">/ 2 pcs</span></div>
+        <ul class="ul"><li>Varian bebas pilih</li><li>Hemat ongkir</li><li>Garansi puas</li></ul>
+        <div class="cta" style="margin-top:14px"><a class="btn btn-primary" href="#pesan">Pilih Paket</a></div>
+      </div>
+      <div class="card price-card">
+        <div class="high-title">Paket Acara</div>
+        <div><span class="price">Rp200.000</span> <span class="unit">/ 10 pcs</span></div>
+        <ul class="ul"><li>Cocok untuk gosipan</li><li>Custom label</li><li>Diskon khusus</li></ul>
+        <div class="cta" style="margin-top:14px"><a class="btn btn-primary" href="#pesan">Pilih Paket</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="testimoni">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="section-title">Apa Kata Mereka</h2>
+      <small style="color:var(--muted)">Tunjukkan kepercayaan</small>
+    </div>
+    <div class="testi-grid">
+      <div class="card testi"><p>“Rasanya mantap, gurih. Repeat order!”</p><div class="who">— Aulia</div></div>
+      <div class="card testi"><p>“Harga ramah, cocok buat cemilan nongkrong/belajar.”</p><div class="who">— Rahmatullah</div></div>
+      <div class="card testi"><p>“Cemilan yang dibuat dari hati akan selalu dikenang pembeli.”</p><div class="who">— Haikal</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="pesan">
+  <div class="container">
+    <div class="faq">
       <div>
-        <span class="badge">Produk Lokal • Kualitas Juara</span>
-        <h1>Solusi <span style="color:var(--brand)">Sehari‑hari</span> yang Enak, Sehat, & Terjangkau</h1>
-        <p class="lead">Deskripsikan produk utama kamu di sini: apa itu, untuk siapa, dan kenapa harus beli sekarang. Singkat, padat, mengena.</p>
-        <div class="cta">
-          <a class="btn btn-primary" href="https://wa.me/6289691419493?text=Halo%20saya%20mau%20pesan%20NAMA%20PRODUK" target="_blank" rel="noopener">💬 Pesan via WhatsApp</a>
-          <a class="btn btn-ghost" href="#tentang">Lihat Detail Produk</a>
-        </div>
-        <div style="display:flex;gap:16px;margin-top:16px;color:var(--muted);align-items:center">
-          <div style="display:flex;gap:6px;align-items:center"><span style="width:10px;height:10px;background:var(--accent);border-radius:50%"></span><small>COD/Meet up tersedia</small></div>
-          <div style="display:flex;gap:6px;align-items:center"><span style="width:10px;height:10px;background:#60a5fa;border-radius:50%"></span><small>Pengiriman cepat</small></div>
-        </div>
-      </div>
-      <div class="card" style="padding:14px">
-        <img src="https://a.top4top.io/p_3551ar18q1.jpg" alt="Foto produk" />
-      </div>
-    </div>
-  </section>  <!-- ============ Highlights ============ -->  <section class="highlights container">
-    <div class="high-grid">
-      <div class="card high-item">
-        <div class="high-title">Bahan Berkualitas</div>
-        <div class="high-desc">Gunakan poin-poin keunggulan: bahan premium, tanpa pengawet, lokal, dll.</div>
-      </div>
-      <div class="card high-item">
-        <div class="high-title">Harga Bersahabat</div>
-        <div class="high-desc">Tawarkan value for money dengan paket hemat/ecer.</div>
-      </div>
-      <div class="card high-item">
-        <div class="high-title">Rasa Disukai Banyak Orang</div>
-        <div class="high-desc">Sisipkan klaim sosial: “disukai 98% tester”, atau testimoni singkat.</div>
-      </div>
-    </div>
-  </section>  <!-- ============ Tentang ============ -->  <section id="tentang">
-    <div class="container">
-      <div class="section-head">
-        <h2 class="section-title">Tentang Produk</h2>
-        <a href="#pesan">Pesan Sekarang →</a>
+        <div class="section-head"><h2 class="section-title">Pertanyaan Umum</h2></div>
+        <details><summary>Apakah bisa COD?</summary><p>Ya, tersedia COD…</p></details>
+        <details><summary>Berapa lama pengiriman?</summary><p>Biasanya 1–3 jam…</p></details>
+        <details><summary>Apakah bisa pesanan besar (event)?</summary><p>Bisa…</p></details>
       </div>
       <div class="card" style="padding:18px">
-        <p style="color:var(--muted);max-width:80ch">Ceritakan cerita produk: ide awal, proses pembuatan (higienis, UMKM, halal), dan manfaat utama. Jelaskan varian rasa/fitur. Tambahkan USP (Unique Selling Point) yang membedakan dengan kompetitor.</p>
+        <h3 style="margin-top:0">Pesan Sekarang</h3>
+        <p style="color:var(--muted);margin-top:6px">Hubungi kami via WhatsApp atau isi form singkat ini.</p>
+        <form onsubmit="return order(event)">
+          <label>Nama<br>
+            <input required name="nama" placeholder="Nama kamu" style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb">
+          </label>
+          <br><br>
+          <label>Pilih Paket<br>
+            <select name="paket" required style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb">
+              <option value="Paket Hemat">Paket Hemat</option>
+              <option value="Paket Favorit">Paket Favorit</option>
+              <option value="Paket Acara">Paket Acara</option>
+              <option value="Lainnya">Lainnya / Custom</option>
+            </select>
+          </label>
+          <br><br>
+          <label>Varian (tulis manual)<br>
+            <input name="varian" placeholder="Contoh: Original Pedas / sesuai request" style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb">
+          </label>
+          <br><br>
+          <label>Jumlah<br>
+            <input type="number" min="1" value="1" name="qty" style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb">
+          </label>
+          <br><br>
+          <button class="btn btn-primary" type="submit">Kirim ke WhatsApp</button>
+          <a class="btn btn-ghost" href="https://wa.me/6289691419493" target="_blank" rel="noopener">Chat Langsung</a>
+        </form>
       </div>
     </div>
-  </section>  <!-- ============ Galeri ============ -->  <section id="galeri">
-    <div class="container">
-      <div class="section-head">
-        <h2 class="section-title">Galeri</h2>
-        <small style="color:var(--muted)">Taruh 4–8 foto terbaik</small>
-      </div>
-      <div class="gallery-grid">
-        <img src="https://a.top4top.io/p_3551ar18q1.jpg" alt="Galeri 1">
-        <img src="https://a.top4top.io/p_3551ar18q1.jpg" alt="Galeri 2">
-        <img src="https://a.top4top.io/p_3551ar18q1.jpg" alt="Galeri 3">
-        <img src="https://a.top4top.io/p_3551ar18q1.jpg" alt="Galeri 4">
-      </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container foot">
+    <small>© <span id="year"></span> Cireng_Lovers • UMKM/Team Stiper</small>
+    <div style="display:flex;gap:10px">
+      <a href="#">Instagram</a>
+      <a href="#">TikTok</a>
+      <a href="#">Marketplace</a>
     </div>
-  </section>  <!-- ============ Harga ============ -->  <section id="harga">
-    <div class="container">
-      <div class="section-head">
-        <h2 class="section-title">Harga & Paket</h2>
-        <small style="color:var(--muted)">Transparan & jelas</small>
-      </div>
-      <div class="pricing-grid">
-        <div class="card price-card">
-          <div class="high-title">Paket Hemat</div>
-          <div><span class="price">Rp25.000</span> <span class="unit">/ pcs</span></div>
-          <ul class="ul">
-            <li>Isi fitur 1</li>
-            <li>Isi fitur 2</li>
-            <li>Gratis stiker</li>
-          </ul>
-          <div class="cta" style="margin-top:14px"><a class="btn btn-primary" href="#pesan">Pilih Paket</a></div>
-        </div>
-        <div class="card price-card" style="border:2px solid var(--brand)">
-          <div class="high-title">Paket Favorit</div>
-          <div><span class="price">Rp45.000</span> <span class="unit">/ 2 pcs</span></div>
-          <ul class="ul">
-            <li>Varian bebas pilih</li>
-            <li>Hemat ongkir</li>
-            <li>Garansi puas</li>
-          </ul>
-          <div class="cta" style="margin-top:14px"><a class="btn btn-primary" href="#pesan">Pilih Paket</a></div>
-        </div>
-        <div class="card price-card">
-          <div class="high-title">Paket Acara</div>
-          <div><span class="price">Rp200.000</span> <span class="unit">/ 10 pcs</span></div>
-          <ul class="ul">
-            <li>Cocok untuk gosipan</li>
-            <li>Custom label</li>
-            <li>Diskon khusus</li>
-          </ul>
-          <div class="cta" style="margin-top:14px"><a class="btn btn-primary" href="#pesan">Pilih Paket</a></div>
-        </div>
-      </div>
-    </div>
-  </section>  <!-- ============ Testimoni ============ -->  <section id="testimoni">
-    <div class="container">
-      <div class="section-head">
-        <h2 class="section-title">Apa Kata Mereka</h2>
-        <small style="color:var(--muted)">Tunjukkan kepercayaan</small>
-      </div>
-      <div class="testi-grid">
-        <div class="card testi">
-          <p>“Rasanya mantap, gurih. Repeat order!”</p>
-          <div class="who">— Aulia, Mahasiswa</div>
-        </div>
-        <div class="card testi">
-          <p>“Harga ramah, cocok buat cemilan nongkrong/belajar.”</p>
-          <div class="who">— Rahmatullah, Karyawan</div>
-        </div>
-        <div class="card testi">
-          <p>“Cemilan yang dibuat dari hati akan selalu dikenang pembeli.”</p>
-          <div class="who">— Haikal, Ceo</div>
-        </div>
-      </div>
-    </div>
-  </section>  <!-- ============ FAQ + Kontak/Pesan ============ -->  <section id="pesan">
-    <div class="container">
-      <div class="faq">
-        <div>
-          <div class="section-head"><h2 class="section-title">Pertanyaan Umum</h2></div>
-          <details>
-            <summary>Apakah bisa COD?</summary>
-            <p>Ya, tersedia COD di area kampus/sekitar lokasi. Silakan hubungi kami untuk janjian.</p>
-          </details>
-          <details>
-            <summary>Berapa lama pengiriman?</summary>
-            <p>Biasanya 1–3 jam area dekat, 1–2 hari luar kota (tergantung ekspedisi).</p>
-          </details>
-          <details>
-            <summary>Apakah bisa pesanan besar (event)?</summary>
-            <p>Bisa, gunakan paket acara atau chat kami untuk penawaran khusus.</p>
-          </details>
-        </div>
-        <div class="card" style="padding:18px">
-          <h3 style="margin-top:0">Pesan Sekarang</h3>
-          <p style="color:var(--muted);margin-top:6px">Hubungi kami via WhatsApp atau isi form singkat ini.</p>
-          <form onsubmit="return order(event)">
-            <label>Nama<br><input required name="nama" placeholder="Nama kamu" style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb"></label>
-            <br><br>
-            <label>Varian<br>
-              <select name="varian" style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb">
-                <option>Original</option>
-                <option>Pedas</option>
-                <option>Keju</option>
-              </select>
-            </label>
-            <br><br>
-            <label>Jumlah<br><input type="number" min="1" value="1" name="qty" style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb"></label>
-            <br><br>
-            <button class="btn btn-primary" type="submit">Kirim ke WhatsApp</button>
-            <a class="btn btn-ghost" href="https://wa.me/6289691419493" target="_blank" rel="noopener">Chat Langsung</a>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>  <!-- ============ Footer ============ -->  <footer>
-    <div class="container foot">
-      <small>© <span id="year"></span> Cireng_Lovers • UMKM/Team Stiper</small>
-      <div style="display:flex;gap:10px">
-        <a href="#">Instagram</a>
-        <a href="#">TikTok</a>
-        <a href="#">Marketplace</a>
-      </div>
-    </div>
-  </footer>  <!-- ============ Script (JS) ============ -->  <script>
-    function toggleMenu(){
-      const nav=document.getElementById('navLinks');
-      nav.classList.toggle('open');
-    }
-    
-    function order(e){
-      e.preventDefault();
-      const f=e.target;
-      const nama=encodeURIComponent(f.nama.value.trim());
-      const varian=encodeURIComponent(f.varian.value);
-      const qty=encodeURIComponent(f.qty.value);
-      const produk=encodeURIComponent('Cireng_Lovers'); // ganti sesuai brand kamu
-      const msg=`Halo, saya ${nama} mau pesan ${produk}%0A- Varian: ${varian}%0A- Jumlah: ${qty}`;
-      const wa=`https://wa.me/6289691419493?text=${msg}`; // ganti nomor WA kamu
-      window.open(wa,'_blank');
-      return false;
-    }
-    document.getElementById('year').textContent=new Date().getFullYear();
-  </script></body>
-  </html>
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){
+  const nav=document.getElementById('navLinks');
+  nav.classList.toggle('open');
+}
+function order(e){
+  e.preventDefault();
+  const f=e.target;
+  const nama   = encodeURIComponent(f.nama.value.trim());
+  const paket  = encodeURIComponent(f.paket.value);
+  const varian = encodeURIComponent(f.varian.value.trim() || '–');
+  const qty    = encodeURIComponent(f.qty.value);
+  const produk = encodeURIComponent('Cireng_Lovers');
+  const msg = `Halo, saya ${nama} mau pesan ${produk}%0A- Paket: ${paket}%0A- Varian: ${varian}%0A- Jumlah: ${qty}`;
+  const wa  = `https://wa.me/6289691419493?text=${msg}`;
+  window.open(wa,'_blank');
+  return false;
+}
+document.getElementById('year').textContent=new Date().getFullYear();
+</

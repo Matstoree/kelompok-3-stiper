@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cireng_Lovers</title>
   <meta name="description" content="Profil produk, keunggulan, harga, testimoni, dan cara pemesanan." />
+  <!-- ============ Gaya (CSS) ============ -->
   <style>
     :root{
       --brand:#2b8a3e;
@@ -104,10 +105,15 @@
         CIRBON menghadirkan <strong>Cireng Abon isi melimpah</strong> — 
         camilan gurih khas Bandung yang cocok untuk mahasiswa, pekerja, hingga keluarga. 
         Dibuat dari bahan pilihan tanpa pengawet, rasanya renyah di luar, lembut di dalam, dan selalu bikin nagih.  
+        Kenapa harus coba? Karena harganya ramah, praktis untuk segala suasana, dan jadi favorit kalau sudah nyoba!
       </p>
       <div class="cta">
         <a class="btn btn-primary" href="https://wa.me/6289691419493?text=Halo%20saya%20mau%20pesan%20CIRBON%20Kak" target="_blank" rel="noopener">💬 Pesan via WhatsApp</a>
         <a class="btn btn-ghost" href="#tentang">Lihat Detail Produk</a>
+      </div>
+      <div style="display:flex;gap:16px;margin-top:16px;color:var(--muted);align-items:center">
+        <div style="display:flex;gap:6px;align-items:center"><span style="width:10px;height:10px;background:var(--accent);border-radius:50%"></span><small>COD/Meet up tersedia</small></div>
+        <div style="display:flex;gap:6px;align-items:center"><span style="width:10px;height:10px;background:#60a5fa;border-radius:50%"></span><small>Pengiriman cepat</small></div>
       </div>
     </div>
     <div class="card" style="padding:14px">
@@ -116,10 +122,55 @@
   </div>
 </section>
 
+<section class="highlights container">
+  <div class="high-grid">
+    <div class="card high-item">
+      <div class="high-title">Bahan Berkualitas</div>
+      <div class="high-desc">Gunakan poin-poin keunggulan: bahan premium, tanpa pengawet, lokal, dll.</div>
+    </div>
+    <div class="card high-item">
+      <div class="high-title">Harga Bersahabat</div>
+      <div class="high-desc">Tawarkan value for money dengan paket hemat/ecer.</div>
+    </div>
+    <div class="card high-item">
+      <div class="high-title">Rasa Disukai Banyak Orang</div>
+      <div class="high-desc">Sisipkan klaim sosial: “disukai 98% tester”, atau testimoni singkat.</div>
+    </div>
+  </div>
+</section>
+
+<section id="tentang">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="section-title">Tentang Produk</h2>
+      <a href="#pesan">Pesan Sekarang →</a>
+    </div>
+    <div class="card" style="padding:18px">
+      <p style="color:var(--muted);max-width:80ch">Ceritakan cerita produk… USP dsb.</p>
+    </div>
+  </div>
+</section>
+
+<section id="galeri">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="section-title">Galeri</h2>
+      <small style="color:var(--muted)">Taruh 4–8 foto terbaik</small>
+    </div>
+    <div class="gallery-grid">
+      <img src="https://a.top4top.io/p_3551ar18q1.jpg" alt="Galeri 1">
+      <img src="https://a.top4top.io/p_3551ar18q1.jpg" alt="Galeri 2">
+      <img src="https://a.top4top.io/p_3551ar18q1.jpg" alt="Galeri 3">
+      <img src="https://a.top4top.io/p_3551ar18q1.jpg" alt="Galeri 4">
+    </div>
+  </div>
+</section>
+
 <section id="harga">
   <div class="container">
     <div class="section-head">
       <h2 class="section-title">Harga & Paket</h2>
+      <small style="color:var(--muted)">Transparan & jelas</small>
     </div>
     <div class="pricing-grid">
       <div class="card price-card">
@@ -137,9 +188,23 @@
       <div class="card price-card">
         <div class="high-title">Paket Acara</div>
         <div><span class="price">Rp200.000</span> <span class="unit">/ 10 pcs</span></div>
-        <ul class="ul"><li>Cocok untuk event</li><li>Custom label</li><li>Diskon khusus</li></ul>
+        <ul class="ul"><li>Cocok untuk gosipan</li><li>Custom label</li><li>Diskon khusus</li></ul>
         <div class="cta" style="margin-top:14px"><a class="btn btn-primary" href="#pesan">Pilih Paket</a></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="testimoni">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="section-title">Apa Kata Mereka</h2>
+      <small style="color:var(--muted)">Tunjukkan kepercayaan</small>
+    </div>
+    <div class="testi-grid">
+      <div class="card testi"><p>“Rasanya mantap, gurih. Repeat order!”</p><div class="who">— Aulia</div></div>
+      <div class="card testi"><p>“Harga ramah, cocok buat cemilan nongkrong/belajar.”</p><div class="who">— Rahmatullah</div></div>
+      <div class="card testi"><p>“Cemilan yang dibuat dari hati akan selalu dikenang pembeli.”</p><div class="who">— Haikal</div></div>
     </div>
   </div>
 </section>
@@ -147,9 +212,15 @@
 <section id="pesan">
   <div class="container">
     <div class="faq">
+      <div>
+        <div class="section-head"><h2 class="section-title">Pertanyaan Umum</h2></div>
+        <details><summary>Apakah bisa COD?</summary><p>Ya, tersedia COD untuk wilayah kampus dan sekitarnya…</p></details>
+        <details><summary>Berapa lama pengiriman?</summary><p>Tergantung jarak lokasi....</p></details>
+        <details><summary>Apakah bisa pesanan besar (event)?</summary><p>Bisa…</p></details>
+      </div>
       <div class="card" style="padding:18px">
         <h3 style="margin-top:0">Pesan Sekarang</h3>
-        <p style="color:var(--muted);margin-top:6px">Isi form berikut untuk order via WhatsApp.</p>
+        <p style="color:var(--muted);margin-top:6px">Hubungi kami via WhatsApp atau isi form singkat ini.</p>
         <form onsubmit="return order(event)">
           <label>Nama<br>
             <input required name="nama" placeholder="Nama kamu" style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb">
@@ -173,7 +244,7 @@
 
           <div id="customPaketField" style="display:none">
             <label>Tulis Nama Paket<br>
-              <input name="paketCustom" placeholder="Contoh: Beli 25 pcs" style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb">
+              <input name="paketCustom" placeholder="Contoh: Beli 7 pcs" style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb">
             </label>
             <br><br>
           </div>
@@ -198,43 +269,36 @@
 
 <footer>
   <div class="container foot">
-    <small>© <span id="year"></span> Cireng_Lovers</small>
+    <div>© <span id="year"></span> CIRBON</div>
+    <div style="display:flex;gap:10px">
+      <a href="#galeri">Galeri</a>
+      <a href="#harga">Harga</a>
+      <a href="#pesan">Pesan</a>
+    </div>
   </div>
 </footer>
 
+<!-- ============ Script ============ -->
 <script>
 function toggleMenu(){
-  const nav=document.getElementById('navLinks');
-  nav.classList.toggle('open');
+  document.getElementById('navLinks').classList.toggle('open');
 }
 function toggleCustomPaket(sel){
-  const field=document.getElementById('customPaketField');
-  if(sel.value==="Custom"){
-    field.style.display="block";
-  } else {
-    field.style.display="none";
-  }
+  document.getElementById('customPaketField').style.display = sel.value === 'Custom' ? 'block':'none';
 }
 function order(e){
   e.preventDefault();
   const f = e.target;
-  let paket = f.paket.value;
-  if(paket==="Custom"){
-    paket = f.paketCustom.value.trim() || "Custom (belum diisi)";
-  }
-  const nama   = f.nama.value.trim();
-  const alamat = f.alamat.value.trim();
-  const varian = f.varian.value.trim() || '–';
+  const nama   = f.nama.value;
+  const alamat = f.alamat.value;
+  const paket  = f.paket.value === 'Custom' ? f.paketCustom.value : f.paket.value;
+  const varian = f.varian.value;
   const qty    = f.qty.value;
-  const produk = 'Cireng_Lovers';
-
-  const msg = `Halo, saya ${nama}\nAlamat: ${alamat}\nMau pesan ${produk}\n- Paket: ${paket}\n- Varian: ${varian}\n- Jumlah: ${qty}`;
-  const wa  = `https://wa.me/6289691419493?text=${encodeURIComponent(msg)}`;
-
-  window.open(wa,'_blank');
+  const msg = `Halo kak, saya mau pesan CIRBON:%0A- Nama: ${nama}%0A- Alamat: ${alamat}%0A- Paket: ${paket}%0A- Varian: ${varian}%0A- Jumlah: ${qty}`;
+  window.open(`https://wa.me/6289691419493?text=${msg}`,'_blank');
   return false;
 }
-document.getElementById('year').textContent=new Date().getFullYear();
+document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 </body>
 </html>

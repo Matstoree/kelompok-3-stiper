@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cireng_Lovers</title>
   <meta name="description" content="Profil produk, keunggulan, harga, testimoni, dan cara pemesanan." />
+  <!-- ============ Gaya (CSS) ============ -->
   <style>
     :root{
       --brand:#2b8a3e;
@@ -226,7 +227,7 @@
           </label>
           <br><br>
           <label>Pilih Paket<br>
-            <select name="paket" id="paketSelect" required onchange="toggleCustomInput(this)" style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb">
+            <select name="paket" required style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb">
               <option value="Paket Hemat">Paket Hemat</option>
               <option value="Paket Favorit">Paket Favorit</option>
               <option value="Paket Acara">Paket Acara</option>
@@ -234,22 +235,12 @@
             </select>
           </label>
           <br><br>
-          <div id="customPaketField" style="display:none">
-            <label>Paket Custom<br>
-              <input name="customPaket" placeholder="Tulis paket custom kamu" style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb">
-            </label>
-            <br><br>
-          </div>
           <label>Varian<br>
-            <input name="varian" placeholder="Contoh: Abon Pedas/manis" style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb">
+            <input name="varian" placeholder="Contoh: Original Pedas" style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb">
           </label>
           <br><br>
           <label>Jumlah<br>
             <input type="number" min="1" value="1" name="qty" style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb">
-          </label>
-          <br><br>
-          <label>Alamat<br>
-            <textarea required name="alamat" placeholder="Tulis alamat lengkap untuk pengiriman" style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb"></textarea>
           </label>
           <br><br>
           <button class="btn btn-primary" type="submit">Kirim ke WhatsApp</button>
@@ -263,4 +254,36 @@
 <footer>
   <div class="container foot">
     <small>© <span id="year"></span> Cireng_Lovers • UMKM/Team Stiper</small>
-    <
+    <div style="display:flex;gap:10px">
+      <a href="#">Instagram</a>
+      <a href="#">TikTok</a>
+      <a href="#">Marketplace</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){
+  const nav=document.getElementById('navLinks');
+  nav.classList.toggle('open');
+}
+function order(e){
+  e.preventDefault();
+  const f = e.target;
+  const nama   = f.nama.value.trim();
+  const paket  = f.paket.value;
+  const varian = f.varian.value.trim() || '–';
+  const qty    = f.qty.value;
+  const produk = 'Cireng_Lovers';
+
+  // Gunakan \n lalu encode sekali
+  const msg = `Halo, saya ${nama} mau pesan ${produk}\n- Paket: ${paket}\n- Varian: ${varian}\n- Jumlah: ${qty}`;
+  const wa  = `https://wa.me/6289691419493?text=${encodeURIComponent(msg)}`;
+
+  window.open(wa,'_blank');
+  return false;
+}
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>

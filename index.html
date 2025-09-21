@@ -238,43 +238,110 @@
         <details><summary>Berapa lama pengiriman?</summary><p>Tergantung jarak lokasi....</p></details>
         <details><summary>Apakah bisa pesanan besar (event)?</summary><p>Bisa…</p></details>
       </div>
-      <div class="card" style="padding:18px">
-        <h3 style="margin-top:0">Pesan Sekarang</h3>
-        <p style="color:var(--muted);margin-top:6px">Hubungi kami via WhatsApp atau isi form singkat ini.</p>
-        <form onsubmit="return order(event)">
-          <label>Nama<br>
-            <input required name="nama" placeholder="Nama kamu" style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb">
-          </label>
-          <br><br>
-          <label>Alamat<br>
-            <textarea required name="alamat" placeholder="Alamat lengkap untuk pengiriman" style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb;min-height:80px;resize:vertical"></textarea>
-          </label>
-          <br><br>
-          <label>Pilih Paket<br>
-            <select name="paket" required style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb" onchange="toggleCustomFields(this.value)">
-              <option value="Paket Hemat">Paket Hemat</option>
-              <option value="Paket Favorit">Paket Favorit</option>
-              <option value="Paket Acara">Paket Acara</option>
-              <option value="Lainnya">Lainnya / Custom</option>
-            </select>
-          </label>
-          <div id="customFields">
-            <br>
-            <label>Detail Custom<br>
-              <textarea name="customDetail" placeholder="Jelaskan detail pesanan custom Anda..." style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb;min-height:80px;resize:vertical"></textarea>
-            </label>
+      <div class="card" style="padding:32px;background:linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);border:2px solid #e0f2fe">
+        <div style="text-align:center;margin-bottom:24px">
+          <div style="width:60px;height:60px;background:var(--brand);border-radius:50%;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-size:24px">📝</div>
+          <h3 style="margin:0 0 8px;color:var(--brand)">Pesan Sekarang</h3>
+          <p style="color:var(--muted);margin:0">Isi form di bawah atau hubungi langsung via WhatsApp</p>
+        </div>
+        
+        <form onsubmit="return order(event)" style="max-width:100%">
+          <div style="display:grid;gap:20px">
+            
+            <div class="form-group">
+              <label style="display:block;font-weight:600;margin-bottom:8px;color:var(--ink)">
+                <span style="display:flex;align-items:center;gap:6px">
+                  👤 Nama Lengkap
+                  <span style="color:#ef4444;font-size:12px">*</span>
+                </span>
+              </label>
+              <input required name="nama" placeholder="Masukkan nama lengkap Anda" 
+                     style="width:100%;padding:14px 16px;border-radius:12px;border:2px solid #e5e7eb;font-family:inherit;font-size:14px;transition:all 0.3s;background:#ffffff"
+                     onfocus="this.style.borderColor='var(--brand)';this.style.boxShadow='0 0 0 3px rgba(43,138,62,0.1)'"
+                     onblur="this.style.borderColor='#e5e7eb';this.style.boxShadow='none'">
+            </div>
+
+            <div class="form-group">
+              <label style="display:block;font-weight:600;margin-bottom:8px;color:var(--ink)">
+                <span style="display:flex;align-items:center;gap:6px">
+                  📍 Alamat Pengiriman
+                  <span style="color:#ef4444;font-size:12px">*</span>
+                </span>
+              </label>
+              <textarea required name="alamat" placeholder="Jalan, RT/RW, Kelurahan, Kecamatan, Kota" 
+                        style="width:100%;padding:14px 16px;border-radius:12px;border:2px solid #e5e7eb;font-family:inherit;font-size:14px;min-height:90px;resize:vertical;transition:all 0.3s;background:#ffffff"
+                        onfocus="this.style.borderColor='var(--brand)';this.style.boxShadow='0 0 0 3px rgba(43,138,62,0.1)'"
+                        onblur="this.style.borderColor='#e5e7eb';this.style.boxShadow='none'"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label style="display:block;font-weight:600;margin-bottom:8px;color:var(--ink)">
+                <span style="display:flex;align-items:center;gap:6px">
+                  📦 Pilih Paket
+                  <span style="color:#ef4444;font-size:12px">*</span>
+                </span>
+              </label>
+              <select name="paket" required onchange="toggleCustomFields(this.value)"
+                      style="width:100%;padding:14px 16px;border-radius:12px;border:2px solid #e5e7eb;font-family:inherit;font-size:14px;background:#ffffff;transition:all 0.3s"
+                      onfocus="this.style.borderColor='var(--brand)';this.style.boxShadow='0 0 0 3px rgba(43,138,62,0.1)'"
+                      onblur="this.style.borderColor='#e5e7eb';this.style.boxShadow='none'">
+                <option value="Paket Hemat">💚 Paket Hemat - Rp25.000</option>
+                <option value="Paket Favorit">⭐ Paket Favorit - Rp45.000</option>
+                <option value="Paket Acara">🎉 Paket Acara - Rp200.000</option>
+                <option value="Lainnya">✨ Lainnya / Custom</option>
+              </select>
+            </div>
+            
+            <div id="customFields" style="display:none">
+              <div class="form-group" style="background:#f0fdf4;padding:16px;border-radius:12px;border:1px dashed var(--brand)">
+                <label style="display:block;font-weight:600;margin-bottom:8px;color:var(--brand)">
+                  <span style="display:flex;align-items:center;gap:6px">
+                    ✏️ Detail Pesanan Custom
+                  </span>
+                </label>
+                <textarea name="customDetail" placeholder="Contoh: 5 pcs rasa pedas + 3 pcs original, kemasan khusus ulang tahun..."
+                          style="width:100%;padding:12px 14px;border-radius:8px;border:1px solid #bbf7d0;font-family:inherit;font-size:14px;min-height:80px;resize:vertical;background:#ffffff"></textarea>
+              </div>
+            </div>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+              <div class="form-group">
+                <label style="display:block;font-weight:600;margin-bottom:8px;color:var(--ink)">
+                  <span style="display:flex;align-items:center;gap:6px">🌶️ Varian Rasa</span>
+                </label>
+                <input name="varian" placeholder="Original, Pedas, Mix" 
+                       style="width:100%;padding:14px 16px;border-radius:12px;border:2px solid #e5e7eb;font-family:inherit;font-size:14px;transition:all 0.3s;background:#ffffff"
+                       onfocus="this.style.borderColor='var(--brand)';this.style.boxShadow='0 0 0 3px rgba(43,138,62,0.1)'"
+                       onblur="this.style.borderColor='#e5e7eb';this.style.boxShadow='none'">
+              </div>
+
+              <div class="form-group">
+                <label style="display:block;font-weight:600;margin-bottom:8px;color:var(--ink)">
+                  <span style="display:flex;align-items:center;gap:6px">🔢 Jumlah</span>
+                </label>
+                <input type="number" min="1" value="1" name="qty"
+                       style="width:100%;padding:14px 16px;border-radius:12px;border:2px solid #e5e7eb;font-family:inherit;font-size:14px;transition:all 0.3s;background:#ffffff"
+                       onfocus="this.style.borderColor='var(--brand)';this.style.boxShadow='0 0 0 3px rgba(43,138,62,0.1)'"
+                       onblur="this.style.borderColor='#e5e7eb';this.style.boxShadow='none'">
+              </div>
+            </div>
+
           </div>
-          <br><br>
-          <label>Varian<br>
-            <input name="varian" placeholder="Contoh: Original Pedas" style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb">
-          </label>
-          <br><br>
-          <label>Jumlah<br>
-            <input type="number" min="1" value="1" name="qty" style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb">
-          </label>
-          <br><br>
-          <button class="btn btn-primary" type="submit">Kirim ke WhatsApp</button>
-          <a class="btn btn-ghost" href="https://wa.me/6289691419493" target="_blank" rel="noopener">Chat Langsung</a>
+          
+          <div style="margin-top:32px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+            <button class="btn btn-primary" type="submit" style="background:linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);border:none;box-shadow:0 4px 14px rgba(43,138,62,0.3);font-size:15px;padding:16px 24px">
+              🚀 Kirim ke WhatsApp
+            </button>
+            <a class="btn btn-ghost" href="https://wa.me/6289691419493" target="_blank" rel="noopener" style="border:2px solid var(--brand);color:var(--brand);font-size:15px;padding:14px 24px">
+              💬 Chat Langsung
+            </a>
+          </div>
+          
+          <div style="text-align:center;margin-top:20px;padding:16px;background:#f0f9ff;border-radius:12px;border-left:4px solid #0ea5e9">
+            <small style="color:#0369a1;font-weight:500">
+              💡 Tips: Semakin detail pesanan Anda, semakin cepat kami proses!
+            </small>
+          </div>
         </form>
       </div>
     </div>

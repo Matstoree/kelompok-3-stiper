@@ -26,8 +26,11 @@
     .container{max-width:1150px;margin:auto;padding:0 20px}
     header{position:sticky;top:0;background:#fff;border-bottom:1px solid #e5e7eb;z-index:40}
     .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:700}
-    .brand .dot{width:12px;height:12px;border-radius:50%;background:var(--brand)}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:700}
+    .brand-logo{width:40px;height:40px;background:var(--brand);border-radius:8px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+    .brand-logo::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(45deg, var(--brand) 0%, var(--brand-dark) 50%, var(--accent) 100%)}
+    .brand-logo::after{content:'';position:absolute;top:6px;left:6px;right:6px;bottom:6px;background:repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.3) 2px, rgba(255,255,255,0.3) 4px), repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(255,255,255,0.3) 2px, rgba(255,255,255,0.3) 4px);border-radius:4px}
+    .brand-text{font-size:18px;font-weight:800;letter-spacing:1px}
     .nav a{font-weight:600;margin-left:18px;color:#111827;transition:color 0.3s}
     .nav a:hover{color:var(--brand)}
     .menu-btn{display:none;background:transparent;border:0;font-size:28px}
@@ -101,7 +104,10 @@
 <body>
 <header>
   <div class="container nav">
-    <div class="brand"><span class="dot"></span> <span>CIRBON</span></div>
+    <div class="brand">
+      <div class="brand-logo"></div>
+      <span class="brand-text">CIRBON</span>
+    </div>
     <button class="menu-btn" aria-label="Menu" onclick="toggleMenu()">☰</button>
     <nav class="nav-links" id="navLinks">
       <a href="#tentang">Tentang</a>
